@@ -11,12 +11,10 @@
 
 ---
 
-## 👥 Authors & Team Members
+## 👥 Project Attribution
 
-- **Emre Karakas**
-- **Giovanni Bonadeo**
-- **Francesco Petrini**
-- **Dimitrii Shakmaev**
+- **Emre Karakas** — *Repository Maintainer*
+- *This project was developed as a collaborative effort during the Workshop Team Management course.*
 
 ---
 
@@ -69,15 +67,15 @@ This project analyzes the **Moreno Crime Network** (KONECT), a bipartite network
 
 ## 🗃️ Dataset Description & Preprocessing
 
-The dataset originates from the **Moreno Crime Network** hosted on [KONECT](http://konect.cc/networks/moreno_crime):
-- **Raw Network Structure:** Bipartite graph with $N = 1,380$ nodes (Persons and Crimes) and $M = 1,476$ edges.
-  - **Left partition:** Persons who appeared in at least one case.
-  - **Right partition:** Crime cases.
-- **Entity Roles:** Each edge is annotated with the person's role in the event:
-  - `Suspect`
-  - `Victim`
-  - `Witness`
-  - `Victim Suspect`
+The dataset originates from the **Moreno Crime Network** hosted on [KONECT](http://konect.cc/networks/moreno_crime). For convenience and immediate reproducibility, the complete original dataset is also bundled directly inside the [`data/`](./data) directory of this repository.
+
+### Dataset Files in [`data/`](./data):
+- **`out.moreno_crime_crime`**: The bipartite adjacency matrix in whitespace-separated format connecting Person IDs (left nodes) to Crime IDs (right nodes).
+- **`rel.moreno_crime_crime.person.role`**: Role annotations for each interaction (`Suspect`, `Victim`, `Witness`, `Victim Suspect`).
+- **`ent.moreno_crime_crime.person.sex`**: Demographic attribute (`sex`) for individuals in the network.
+- **`ent.moreno_crime_crime.person.name`**: Entity identifier / pseudonym labels.
+- **`meta.moreno_crime_crime`**: Metadata record from the original KONECT release.
+- **`README.moreno_crime`**: Original dataset documentation.
 
 ### Preprocessing & Subgraph Filtering
 To isolate criminal collaboration and co-offending dynamics:
@@ -347,10 +345,15 @@ As part of the **Workshop Team Management** course, this project served as a cas
 ```
 ├── Moreno Crime Network.ipynb       # Complete Jupyter notebook with code, plots & outputs
 ├── Moreno Crime Network.pdf         # Final presentation slides in PDF format
-├── Moreno crime network.pptx        # Editable PowerPoint slide deck
-├── Moreno crime network_codes.pdf   # Slide deck documentation with author attribution
 ├── requirements.txt                 # Python dependencies
 ├── .gitignore                       # Git ignore rules
+├── data/                            # Original Moreno Crime dataset files (self-contained)
+│   ├── out.moreno_crime_crime       # Bipartite edge connections (Person -> Crime)
+│   ├── rel.moreno_crime_crime.person.role # Role annotations (Suspect, Victim, Witness)
+│   ├── ent.moreno_crime_crime.person.sex  # Person demographic attribute
+│   ├── ent.moreno_crime_crime.person.name # Entity labels
+│   ├── meta.moreno_crime_crime      # KONECT metadata
+│   └── README.moreno_crime          # Original dataset documentation
 ├── assets/                          # High-resolution network visualizations & charts
 │   ├── betweenness_centrality_network.png
 │   ├── closeness_centrality_network.png
@@ -403,7 +406,7 @@ pip install -r requirements.txt
 jupyter lab "Moreno Crime Network.ipynb"
 ```
 
-> **Note on Dataset:** The notebook utilizes the KONECT Moreno Crime dataset (`out.moreno_crime_crime` and `rel.moreno_crime_crime.person.role`). The notebook already contains all executed cell outputs and visualizations. To re-run raw parsing from scratch, download the raw archive from [KONECT](http://konect.cc/networks/moreno_crime).
+> **Self-Contained Dataset:** All raw data files are pre-packaged in the `data/` folder, and the notebook automatically locates and parses them. Alternatively, the dataset can also be referenced directly from the official [KONECT repository](http://konect.cc/networks/moreno_crime).
 
 ---
 
