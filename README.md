@@ -8,13 +8,7 @@
 
 > **Workshop Team Management — Final Group Project**  
 > An empirical investigation into criminal collaboration networks, structural role discovery, projection artifact disambiguation, and crime community detection using Network Science.
-
----
-
-## 👥 Project Attribution
-
-- **Emre Karakas** — *Repository Maintainer*
-- *This project was developed as a collaborative effort during the Workshop Team Management course.*
+This project was developed as a collaborative effort during the Workshop Team Management course.
 
 ---
 
